@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trip Data Visulization</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <style type="text/css">
+        .st0{fill:#009FE8;}
+        .st1{fill:#231815;}
+        .st2{font-family:'ArialMT';}
+        .st3{font-size:36px;}
+        .st4{fill:none;stroke:#231815;stroke-width:6;stroke-miterlimit:10;}
+        .st5{fill:#FFFFFF;}
+        .st6{font-family:'Arial-BoldMT';}
+        .st7{font-size:60px;}
+        .st8{fill:#E95504;}
+        .st9{fill:#F7CD00;}
+        .st10{fill:#CD0E19;}
+        .st11{fill:#D06522;}
+        .st12{fill:#A86DAA;}
+        .st13{fill:#274197;}
+        .st14{fill:#E16AA3;}
+        .st15{fill:#1A2281;}
+        .st16{fill:#F2D5E6;}
+        .st17{fill:#2EAC38;}
+        .st18{fill:#8ED2F3;}
+        .st19{fill:#920682;}
+        .st20{fill:#B7D100;}
+        .st21{fill:#FFF000;}
+        .st22{display:none;}
+        .st23{font-family:'MyriadPro-Regular';}
+        .st24{font-size:8.6px;}
+        .st25{fill:#AAA8A4;}
+        .st26{fill:#3C3A39;}
+        .st27{display:inline;fill:none;stroke:#231815;stroke-width:0.7167;stroke-miterlimit:10;}
+    </style>
+    <script>
+        window.onload = function () {					//loading all element
+            $('#illustration').css({
+                'left': ( $(window).outerWidth() - $('#illustration').outerWidth() ) / 2 + 'px'
+            });
+            $('#America').hide();
+            $('#China_1_').hide();
+            $('#Norway').hide();
+            $('#Spain').hide();
+            $('#Hungary2').hide();
+            $('#Austria').hide();
+            $('#Czech').hide();
+            $('#Hungary').hide();
+            $('#France_3').hide();
+            $('#German').hide();
+            $('#Swiss').hide();
+            $('#France_2').hide();
+            $('#Netherland_2').hide();
+            $('#France').hide();
+            $('#Iceland').hide();
+            $('#Belgium').hide();
+            $('#Netherland').hide();
+            $('#Copenhagen').hide();
+            $('#China').hide();
+            $('#Japan').hide();
+//            $('#C_x5F_Denmark').mouseover(function(){
+////                $(this).css("width", "+200");
+//                alert();
+//                $('#America').show();
+//            })
+            var Denmark = document.querySelector('#C_x5F_Denmark');
+            Denmark.addEventListener('mouseover', function(){
+                $("#Copenhagen").fadeIn(1000)
+
+            });
+            Denmark.addEventListener('mouseout', function(){
+                $("#Copenhagen").fadeOut(1000)
+            });
+            var China = document.querySelector('#C_x5F_China1');
+            China.addEventListener('mouseover', function(){
+                $("#China").fadeIn(1000)
+
+            });
+            China.addEventListener('mouseout', function(){
+                $("#China").fadeOut(1000)
+            });
+            var China1 = document.querySelector('#C_x5F_China2');
+            China1.addEventListener('mouseover', function(){
+                $("#China_1_").fadeIn(1000)
+
+            });
+            China1.addEventListener('mouseout', function(){
+                $("#China_1_").fadeOut(1000)
+            });
+            var America = document.querySelector('#C_x5F_America');
+            America.addEventListener('mouseover', function(){
+                $("#America").fadeIn(1000)
+
+            });
+            America.addEventListener('mouseout', function(){
+                $("#America").fadeOut(1000)
+            });
+            var Japan = document.querySelector('#C_x5F_Japan');
+            Japan.addEventListener('mouseover', function(){
+                $("#Japan").fadeIn(1000)
+
+            });
+            Japan.addEventListener('mouseout', function(){
+                $("#Japan").fadeOut(1000)
+            });
+            var Netherland2 = document.querySelector('#C_x5F_Netherland2');
+            Netherland2.addEventListener('mouseover', function(){
+                $("#Netherland_2").fadeIn(1000)
+
+            });
+            Netherland2.addEventListener('mouseout', function(){
+                $("#Netherland_2").fadeOut(1000)
+            });
+            var N1 = document.querySelector('#C_x5F_Netherland1');
+            N1.addEventListener('mouseover', function(){
+                $("#Netherland").fadeIn(1000)
+
+            });
+            N1.addEventListener('mouseout', function(){
+                $("#Netherland").fadeOut(1000)
+            });
+            var iceland = document.querySelector('#C_x5F_Iceland');
+            iceland.addEventListener('mouseover', function(){
+                $("#Iceland").fadeIn(1000)
+
+            });
+            iceland.addEventListener('mouseout', function(){
+                $("#Iceland").fadeOut(1000)
+            });
+            var France3 = document.querySelector('#C_x5F_France2_1_');
+            France3.addEventListener('mouseover', function(){
+                $("#France_3").fadeIn(1000)
+
+            });
+            France3.addEventListener('mouseout', function(){
+                $("#France_3").fadeOut(1000)
+            });
+            var France1 = document.querySelector('#C_x5F_France');
+            France1.addEventListener('mouseover', function(){
+                $("#France").fadeIn(1000)
+
+            });
+            France1.addEventListener('mouseout', function(){
+                $("#France").fadeOut(1000)
+            });
+            var Swiss = document.querySelector('#C_x5F_Swiss');
+            Swiss.addEventListener('mouseover', function(){
+                $("#Swiss").fadeIn(1000)
+
+            });
+            Swiss.addEventListener('mouseout', function(){
+                $("#Swiss").fadeOut(1000)
+            });
+            var Czech = document.querySelector('#C_x5F_Czech');
+            Czech.addEventListener('mouseover', function(){
+                $("#Czech").fadeIn(1000)
+
+            });
+            Czech.addEventListener('mouseout', function(){
+                $("#Czech").fadeOut(1000)
+            });
+            var Hugary = document.querySelector('#C_x5F_Hugary');
+            Hugary.addEventListener('mouseover', function(){
+                $("#Hungary").fadeIn(1000)
+
+            });
+            Hugary.addEventListener('mouseout', function(){
+                $("#Hungary").fadeOut(1000)
+            });
+            var Hugary2 = document.querySelector('#C_x5F_Hugary2');
+            Hugary2.addEventListener('mouseover', function(){
+                $("#Hungary2").fadeIn(1000)
+
+            });
+            Hugary2.addEventListener('mouseout', function(){
+                $("#Hungary2").fadeOut(1000)
+            });
+            var Austria = document.querySelector('#C_x5F_Austria');
+            Austria.addEventListener('mouseover', function(){
+                $("#Austria").fadeIn(1000)
+
+            });
+            Austria.addEventListener('mouseout', function(){
+                $("#Austria").fadeOut(1000)
+            });
+            var Belgium = document.querySelector('#C_x5F_Belgium');
+            Belgium.addEventListener('mouseover', function(){
+                $("#Belgium").fadeIn(1000)
+
+            });
+            Belgium.addEventListener('mouseout', function(){
+                $("#Belgium").fadeOut(1000)
+            });
+            var German = document.querySelector('#C_x5F_German');
+            German.addEventListener('mouseover', function(){
+                $("#German").fadeIn(1000)
+
+            });
+            German.addEventListener('mouseout', function(){
+                $("#German").fadeOut(1000)
+            });
+            var Spain = document.querySelector('#C_x5F_Spain');
+            Spain.addEventListener('mouseover', function(){
+                $("#Spain").fadeIn(1000)
+
+            });
+            Spain.addEventListener('mouseout', function(){
+                $("#Spain").fadeOut(1000)
+            });
+            var Norway = document.querySelector('#C_x5F_Norway');
+            Norway.addEventListener('mouseover', function(){
+                $("#Norway").fadeIn(1000)
+
+            });
+            Norway.addEventListener('mouseout', function(){
+                $("#Norway").fadeOut(1000)
+            });
+            var France2 = document.querySelector('#C_x5F_France2');
+            France2.addEventListener('mouseover', function(){
+                $("#France_2").fadeIn(1000)
+
+            });
+            France2.addEventListener('mouseout', function(){
+                $("#France_2").fadeOut(1000)
+            });
+        }
+    </script>
+</head>
+<body>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2580 1800" style="enable-background:new 0 0 2580 1800;" xml:space="preserve">
+    <g id="places">
+<g id="America">
+	<rect x="0" y="272.6" class="st0" width="2580" height="1527.4"/>
+	<rect x="2346.9" y="224.5" class="st0" width="233.1" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 705.3104)" class="st1 st2 st3">New York</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.2936 53.9485)" class="st4" cx="1216.9" cy="695.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1278.2239 771.3104)" class="st1 st2 st3">San Francisco</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.1833 54.0118)" class="st4" cx="1216.9" cy="761.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1278.2239 837.3108)" class="st1 st2 st3">Philadelphia</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.073 54.075)" class="st4" cx="1216.9" cy="827.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">23</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">3</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">America</text>
+</g>
+<g id="China_1_">
+	<rect x="0" y="272.6" class="st8" width="2580" height="1527.4"/>
+	<rect x="2106.5" y="224.5" class="st8" width="240" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 705.3104)" class="st1 st2 st3">Beijing</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.2936 53.9485)" class="st4" cx="1216.9" cy="695.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1278.2239 771.3104)" class="st1 st2 st3">Hengyang</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.1833 54.0118)" class="st4" cx="1216.9" cy="761.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1278.2239 837.3108)" class="st1 st2 st3">Shanghai</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.073 54.075)" class="st4" cx="1216.9" cy="827.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">24</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">3</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">China</text>
+</g>
+<g id="Norway">
+	<rect x="0" y="272.6" class="st9" width="2580" height="1527.4"/>
+	<rect x="2050" y="224.5" class="st9" width="21" height="48.1"/>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 705.3104)" class="st1 st2 st3">Oslo</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.2936 53.9485)" class="st4" cx="1216.9" cy="695.7" rx="8.3" ry="8.3"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 771.3104)" class="st1 st2 st3">Bergen</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.1833 54.0118)" class="st4" cx="1216.9" cy="761.7" rx="8.3" ry="8.3"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 837.3108)" class="st1 st2 st3">Norheimsund</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.073 54.075)" class="st4" cx="1216.9" cy="827.7" rx="8.3" ry="8.3"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 903.3102)" class="st1 st2 st3">Rosendal</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -37.9627 54.1383)" class="st4" cx="1216.9" cy="893.7" rx="8.3" ry="8.3"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 969.3102)" class="st1 st2 st3">Utne</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -40.8524 54.2016)" class="st4" cx="1216.9" cy="959.7" rx="8.3" ry="8.3"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 1035.3109)" class="st1 st2 st3">Kvanndal</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -43.7422 54.2649)" class="st4" cx="1216.9" cy="1025.7" rx="8.3" ry="8.3"/>
+	</g>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">3</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">6</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Norway</text>
+</g>
+<g id="Spain">
+	<rect x="0" y="272.6" class="st10" width="2580" height="1527.4"/>
+	<rect x="1746.3" y="224.5" class="st10" width="27.9" height="48.1"/>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 705.3104)" class="st1 st2 st3">Madrid</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.2936 53.9485)" class="st4" cx="1216.9" cy="695.7" rx="8.3" ry="8.3"/>
+	</g>
+	<text transform="matrix(1 0 0 1 1278.2239 771.3104)" class="st1 st2 st3">Bacerlona</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.1833 54.0118)" class="st4" cx="1216.9" cy="761.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">3</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">2</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Spain</text>
+</g>
+<g id="Hungary2">
+	<rect x="0" y="272.6" class="st11" width="2580" height="1527.4"/>
+	<rect x="1718" y="224.5" class="st11" width="6.7" height="48.1"/>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 705.3104)" class="st1 st2 st3">Budapest</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.2936 53.9485)" class="st4" cx="1216.9" cy="695.7" rx="8.3" ry="8.3"/>
+	</g>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">1</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">1</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Hungary</text>
+</g>
+<g id="Austria">
+	<rect x="0" y="272.6" class="st12" width="2580" height="1527.4"/>
+	<rect x="1710.8" y="224.5" class="st12" width="6.9" height="48.1"/>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 706.8016)" class="st1 st2 st3">Vienna</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3589 53.9499)" class="st4" cx="1216.9" cy="697.2" rx="8.3" ry="8.3"/>
+	</g>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">1</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">1</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Austria                                    </text>
+</g>
+<g id="Czech">
+	<rect x="0" y="272.6" class="st13" width="2580" height="1527.4"/>
+	<rect x="1696.8" y="224.5" class="st13" width="13.8" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.8016)" class="st1 st2 st3">Prague</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3589 53.9499)" class="st4" cx="1216.9" cy="697.2" rx="8.3" ry="8.3"/>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 771.3107)" class="st1 st2 st3">Kutna Hora</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.1833 54.0118)" class="st4" cx="1216.9" cy="761.7" rx="8.3" ry="8.3"/>
+	</g>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">2</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">2</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Czech                                     </text>
+</g>
+<g id="Hungary">
+	<rect x="0" y="272.6" class="st11" width="2580" height="1527.4"/>
+	<rect x="1689.7" y="224.5" class="st11" width="6.7" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.8016)" class="st1 st2 st3">Budapest</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3589 53.9499)" class="st4" cx="1216.9" cy="697.2" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">1</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">1</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Hungary</text>
+</g>
+<g id="France_3">
+	<rect x="0" y="272.6" class="st14" width="2580" height="1527.4"/>
+	<rect x="1569.9" y="224.5" class="st14" width="20.6" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.8016)" class="st1 st2 st3">Giverny</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3589 53.9499)" class="st4" cx="1216.9" cy="697.2" rx="8.3" ry="8.3"/>
+	<g>
+		<text transform="matrix(1 0 0 1 1278.2239 771.3107)" class="st1 st2 st3">Paris</text>
+
+			<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.1833 54.0118)" class="st4" cx="1216.9" cy="761.7" rx="8.3" ry="8.3"/>
+	</g>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">3</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">2</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">France</text>
+</g>
+<g id="German">
+	<rect x="0" y="272.6" class="st15" width="2580" height="1527.4"/>
+	<rect x="1420.9" y="224.5" class="st15" width="6.8" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.8016)" class="st1 st2 st3">Weil am Rhein</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3589 53.9499)" class="st4" cx="1216.9" cy="697.2" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">1</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">1</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">German</text>
+</g>
+<g id="France_2">
+	<rect x="0" y="272.6" class="st14" width="2580" height="1527.4"/>
+	<rect x="1413.5" y="224.5" class="st14" width="6.8" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.8016)" class="st1 st2 st3">Ronchamp</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3589 53.9499)" class="st4" cx="1216.9" cy="697.2" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">1</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">1</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">France</text>
+</g>
+<g id="Swiss">
+	<rect x="0" y="272.6" class="st16" width="2580" height="1527.4"/>
+	<rect x="1399.9" y="224.5" class="st16" width="35" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.8016)" class="st1 st2 st3">Zurich</text>
+	<text transform="matrix(1 0 0 1 1278.2239 771.3104)" class="st1 st2 st3">Bern</text>
+	<text transform="matrix(1 0 0 1 1278.2239 837.3105)" class="st1 st2 st3">Basel</text>
+	<text transform="matrix(1 0 0 1 1278.2239 903.3105)" class="st1 st2 st3">Vals</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.5216 53.9535)" class="st4" cx="1216.9" cy="700.9" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.1833 54.0118)" class="st4" cx="1216.9" cy="761.7" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.073 54.075)" class="st4" cx="1216.9" cy="827.7" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -37.9627 54.1383)" class="st4" cx="1216.9" cy="893.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">5</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">4</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Swiss</text>
+</g>
+<g id="Netherland_2">
+	<rect x="0" y="272.6" class="st17" width="2580" height="1527.4"/>
+	<rect x="1123.5" y="224.5" class="st17" width="21.2" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.8016)" class="st1 st2 st3">Amsterdam</text>
+	<text transform="matrix(1 0 0 1 1278.2239 771.3104)" class="st1 st2 st3">Delft</text>
+	<text transform="matrix(1 0 0 1 1278.2239 837.3105)" class="st1 st2 st3">Rotterdam</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3589 53.9499)" class="st4" cx="1216.9" cy="697.2" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.1833 54.0118)" class="st4" cx="1216.9" cy="761.7" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.073 54.075)" class="st4" cx="1216.9" cy="827.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">3</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">3</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Netherland</text>
+</g>
+<g id="France">
+	<rect x="0" y="272.6" class="st14" width="2580" height="1527.4"/>
+	<rect x="819.9" y="224.5" class="st14" width="21.6" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.8016)" class="st1 st2 st3">Paris</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3589 53.9499)" class="st4" cx="1216.9" cy="697.2" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">3</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">1</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">France</text>
+</g>
+<g id="Iceland">
+	<rect x="0" y="272.6" class="st18" width="2580" height="1527.4"/>
+	<rect x="764.1" y="224.5" class="st18" width="56.5" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.8016)" class="st1 st2 st3">Reykjavík</text>
+	<text transform="matrix(1 0 0 1 1278.2239 772.5436)" class="st1 st2 st3">Hella</text>
+	<text transform="matrix(1 0 0 1 1278.2239 838.2856)" class="st1 st2 st3">Kirkjubæjarklaustur</text>
+	<text transform="matrix(1 0 0 1 1278.2239 904.0275)" class="st1 st2 st3">Hof</text>
+	<text transform="matrix(1 0 0 1 1278.2239 969.7695)" class="st1 st2 st3">Jökulsárlón</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3589 53.9499)" class="st4" cx="1216.9" cy="697.2" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.2373 54.0129)" class="st4" cx="1216.9" cy="762.9" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.1157 54.076)" class="st4" cx="1216.9" cy="828.7" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -37.9941 54.139)" class="st4" cx="1216.9" cy="894.4" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -40.8726 54.2021)" class="st4" cx="1216.9" cy="960.2" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1278.2239 1035.5115)" class="st1 st2 st3">Grundarfjörður</text>
+	<text transform="matrix(1 2.498506e-04 -2.498506e-04 1 1278.2212 1101.1967)" class="st1 st2 st3">Þjóðgarðurinn Snæfellsjökull</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -43.751 54.2651)" class="st4" cx="1216.9" cy="1025.9" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -46.6301 54.2969)" class="st4" cx="1216.2" cy="1091.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">9</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">7</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Iceland</text>
+</g>
+<g id="Belgium">
+	<rect x="0" y="272.6" class="st19" width="2580" height="1527.4"/>
+	<rect x="713.9" y="224.5" class="st19" width="35.3" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.3104)" class="st1 st2 st3">Brussel</text>
+	<text transform="matrix(1 0 0 1 1278.2239 772.0604)" class="st1 st2 st3">Ghent</text>
+	<text transform="matrix(1 0 0 1 1278.2239 837.8105)" class="st1 st2 st3">Brugge</text>
+	<text transform="matrix(1 0 0 1 1278.2239 903.5605)" class="st1 st2 st3">Anterwerp</text>
+	<text transform="matrix(1 0 0 1 1278.2239 969.3104)" class="st1 st2 st3">Charleroi</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3374 53.9494)" class="st4" cx="1216.9" cy="696.7" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.2162 54.0125)" class="st4" cx="1216.9" cy="762.5" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.0949 54.0755)" class="st4" cx="1216.9" cy="828.2" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -37.9737 54.1386)" class="st4" cx="1216.9" cy="894" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -40.8525 54.2016)" class="st4" cx="1216.9" cy="959.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">5</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">5</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Belgium</text>
+</g>
+<g id="Netherland">
+	<rect x="0" y="272.6" class="st17" width="2580" height="1527.4"/>
+	<rect x="664.4" y="224.5" class="st17" width="21.2" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.3104)" class="st1 st2 st3">Amsterdam</text>
+	<text transform="matrix(1 0 0 1 1278.2239 771.8104)" class="st1 st2 st3">Delft</text>
+	<text transform="matrix(1 0 0 1 1278.2239 837.3105)" class="st1 st2 st3">The Hague</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3374 53.9494)" class="st4" cx="1216.9" cy="696.7" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.2052 54.0122)" class="st4" cx="1216.9" cy="762.2" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.073 54.075)" class="st4" cx="1216.9" cy="827.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">3</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">3</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Netherland</text>
+</g>
+<g id="Copenhagen">
+	<rect x="0" y="272.6" class="st20" width="2580" height="1527.4"/>
+	<rect x="268.6" y="224.5" class="st20" width="1837.3" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.3104)" class="st1 st2 st3">Copenhagen</text>
+	<text transform="matrix(1 0 0 1 1278.2239 771.8104)" class="st1 st2 st3">Taarbæk</text>
+	<text transform="matrix(1 0 0 1 1278.2239 837.3105)" class="st1 st2 st3">Helsingør</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.5216 53.9535)" class="st4" cx="1216.9" cy="700.9" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.2973 54.0143)" class="st4" cx="1216.9" cy="764.3" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.073 54.075)" class="st4" cx="1216.9" cy="827.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">8</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">Months</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">3</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Denmark</text>
+</g>
+<g id="China">
+	<rect x="0" y="272.6" class="st8" width="2580" height="1527.4"/>
+	<rect x="106.7" y="224.5" class="st8" width="161.9" height="48.1"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.3104)" class="st1 st2 st3">Shanghai</text>
+	<text transform="matrix(1 0 0 1 1278.2239 771.8104)" class="st1 st2 st3">Hengyang</text>
+	<text transform="matrix(1 0 0 1 1278.2239 837.3105)" class="st1 st2 st3">Beijing</text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3374 53.9494)" class="st4" cx="1216.9" cy="696.7" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.2052 54.0122)" class="st4" cx="1216.9" cy="762.2" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.073 54.075)" class="st4" cx="1216.9" cy="827.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">16</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">3</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">China</text>
+</g>
+<g id="Japan">
+	<path class="st21" d="M2580,1800H0V272.6h2580V1800z M106,224.5H0v48.1h106V224.5z"/>
+	<text transform="matrix(1 0 0 1 1278.2239 706.3104)" class="st1 st2 st3">Tokyo</text>
+	<text transform="matrix(1 0 0 1 1278.2239 772.1994)" class="st1 st2 st3">Kyoto</text>
+	<text transform="matrix(1 0 0 1 1278.2239 838.0885)" class="st1 st2 st3">Kobe</text>
+	<text transform="matrix(1 0 0 1 1278.2239 903.977)" class="st1 st2 st3">Osaka</text>
+	<text transform="matrix(1 0 0 1 1278.2239 969.8662)" class="st1 st2 st3">Nara</text>
+	<text transform="matrix(1 0 0 1 1278.2239 1035.755)" class="st1 st2 st3">Naoshima</text>
+	<text transform="matrix(1 0 0 1 1278.2239 1101.6439)" class="st1 st2 st3">Teshima</text>
+	<text transform="matrix(1 0 0 1 1278.2239 1167.533)" class="st1 st2 st3">Yokohama</text>
+	<text transform="matrix(1 0 0 1 1278.2239 1233.422)" class="st1 st2 st3">Kamakura</text>
+	<text transform="matrix(1 0 0 1 1278.2239 1299.311)" class="st1 st2 st3">Kawaguchiko </text>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -29.3374 53.9494)" class="st4" cx="1216.9" cy="696.7" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -32.2222 54.0126)" class="st4" cx="1216.9" cy="762.6" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -35.1071 54.0758)" class="st4" cx="1216.9" cy="828.5" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -37.9919 54.139)" class="st4" cx="1216.9" cy="894.4" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -40.8768 54.2022)" class="st4" cx="1216.9" cy="960.3" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -43.7616 54.2653)" class="st4" cx="1216.9" cy="1026.2" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -46.6465 54.3285)" class="st4" cx="1216.9" cy="1092" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -49.5313 54.3917)" class="st4" cx="1216.9" cy="1157.9" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -52.4162 54.4549)" class="st4" cx="1216.9" cy="1223.8" rx="8.3" ry="8.3"/>
+
+		<ellipse transform="matrix(0.999 -4.378355e-02 4.378355e-02 0.999 -55.301 54.5181)" class="st4" cx="1216.9" cy="1289.7" rx="8.3" ry="8.3"/>
+	<text transform="matrix(1 0 0 1 1362.9785 1350)" class="st5 st6 st3">15</text>
+	<text transform="matrix(1 0 0 1 1422.9785 1350)" class="st1 st2 st3">days</text>
+	<text transform="matrix(1 0 0 1 1132.9786 1350)" class="st1 st2 st3">Cities</text>
+	<g>
+		<text transform="matrix(1 0 0 1 1080.9786 1350)" class="st5 st6 st3">10</text>
+	</g>
+	<text transform="matrix(1 0 0 1 1208.2617 527.5903)" class="st1 st2 st7">Japan</text>
+</g>
+        </g>
+<g id="Month">
+	<text transform="matrix(1 0 0 1 153.9756 285.4088)" class="st1 st23 st24">Oct1st</text>
+	<text transform="matrix(1 0 0 1 377.0381 285.4088)" class="st1 st23 st24">Nov 1st</text>
+	<text transform="matrix(1 0 0 1 588.4541 285.4088)" class="st1 st23 st24">Dec 1st</text>
+	<text transform="matrix(1 0 0 1 809.0332 285.4088)" class="st1 st23 st24">Jan 1st</text>
+	<text transform="matrix(1 0 0 1 1024.9316 285.4088)" class="st1 st23 st24">Feb 1st</text>
+	<text transform="matrix(1 0 0 1 1236.9863 285.4088)" class="st1 st23 st24">March 1st</text>
+	<text transform="matrix(1 0 0 1 1445.2969 285.4088)" class="st1 st23 st24">April 1st</text>
+	<text transform="matrix(1 0 0 1 1665.5527 285.4088)" class="st1 st23 st24">May1st</text>
+	<text transform="matrix(1 0 0 1 1880.2188 285.4088)" class="st1 st23 st24">June1st</text>
+	<text transform="matrix(1 0 0 1 2095.2188 285.4088)" class="st1 st23 st24">July1st</text>
+	<text transform="matrix(1 0 0 1 2315.4736 285.4088)" class="st1 st23 st24">August 1st</text>
+	<text transform="matrix(1 0 0 1 2533.8184 285.4088)" class="st1 st23 st24">Sept1st</text>
+	<rect x="0" y="262.6" class="st25" width="169.2" height="9.9"/>
+	<rect x="169.2" y="262.6" class="st26" width="219.8" height="9.9"/>
+	<rect x="600.8" y="262.6" class="st26" width="219.8" height="9.9"/>
+	<rect x="1039.1" y="262.6" class="st26" width="205" height="9.9"/>
+	<rect x="819.9" y="262.6" class="st25" width="219.8" height="9.9"/>
+	<rect x="1244.1" y="262.6" class="st25" width="219.8" height="9.9"/>
+	<rect x="1675.2" y="262.6" class="st25" width="219.8" height="9.9"/>
+	<rect x="2106.4" y="262.6" class="st25" width="219.8" height="9.9"/>
+	<rect x="2545.3" y="262.6" class="st25" width="34.7" height="9.9"/>
+	<rect x="2325.5" y="262.6" class="st26" width="219.8" height="9.9"/>
+	<rect x="1463.2" y="262.6" class="st26" width="212.1" height="9.9"/>
+	<rect x="1894.4" y="262.6" class="st26" width="212.1" height="9.9"/>
+	<rect x="389" y="262.6" class="st25" width="211.4" height="9.9"/>
+</g>
+<g id="Place_Large">
+	<rect id="C_x5F_Denmark" x="268.6" y="205" class="st20" width="1837.8" height="19.5"/>
+	<rect id="C_x5F_China1" x="105.4" y="205" class="st8" width="163.2" height="19.5"/>
+	<rect id="C_x5F_China2" x="2106.4" y="205" class="st8" width="240.3" height="19.5"/>
+	<rect id="C_x5F_America" x="2346.5" y="205" class="st0" width="233.5" height="19.5"/>
+	<rect id="C_x5F_Japan" x="0" y="205" class="st21" width="106.6" height="19.5"/>
+</g>
+<g id="Place_Small">
+	<rect id="C_x5F_Netherland2" x="1123.9" y="205" class="st17" width="21.5" height="19.5"/>
+	<rect id="C_x5F_Netherland1" x="664.4" y="205" class="st17" width="21.2" height="19.5"/>
+	<rect id="C_x5F_Iceland" x="763.4" y="205" class="st18" width="56.5" height="19.5"/>
+	<rect id="C_x5F_France2_1_" x="1569.2" y="205" class="st14" width="21.2" height="19.6"/>
+	<rect id="C_x5F_France" x="819.9" y="205" class="st14" width="21.6" height="19.5"/>
+	<rect id="C_x5F_Swiss" x="1399.6" y="205" class="st16" width="35.3" height="19.5"/>
+	<rect id="C_x5F_Czech" x="1696.4" y="205" class="st13" width="14.2" height="19.6"/>
+	<rect id="C_x5F_Hugary" x="1689.4" y="205" class="st11" width="7" height="19.3"/>
+	<rect id="C_x5F_Hugary2" x="1717.6" y="205" class="st11" width="7" height="19.3"/>
+	<rect id="C_x5F_Austria" x="1710.6" y="205" class="st12" width="7.1" height="19.4"/>
+	<rect id="C_x5F_Belgium" x="713.9" y="205" class="st19" width="35" height="19.5"/>
+	<rect id="C_x5F_German" x="1420.8" y="205" class="st15" width="7.1" height="19.6"/>
+	<rect id="C_x5F_Spain" x="1745.9" y="205" class="st10" width="28.3" height="19.6"/>
+
+		<rect id="C_x5F_Norway" x="2049.9" y="205" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 4120.9316 429.5375)" class="st9" width="21.2" height="19.5"/>
+	<rect id="C_x5F_France2" x="1413.7" y="205" class="st14" width="7.1" height="19.5"/>
+</g>
+<g id="Date_Base" class="st22">
+	<line class="st27" x1="2580" y1="0" x2="2580" y2="272.6"/>
+	<line class="st27" x1="2572.9" y1="0" x2="2572.9" y2="272.6"/>
+	<line class="st27" x1="2565.9" y1="0" x2="2565.9" y2="272.6"/>
+	<line class="st27" x1="2558.8" y1="0" x2="2558.8" y2="272.6"/>
+	<line class="st27" x1="2551.7" y1="0" x2="2551.7" y2="272.6"/>
+	<line class="st27" x1="2544.7" y1="0" x2="2544.7" y2="272.6"/>
+	<line class="st27" x1="2537.6" y1="0" x2="2537.6" y2="272.6"/>
+	<line class="st27" x1="2530.5" y1="0" x2="2530.5" y2="272.6"/>
+	<line class="st27" x1="2523.5" y1="0" x2="2523.5" y2="272.6"/>
+	<line class="st27" x1="2516.4" y1="0" x2="2516.4" y2="272.6"/>
+	<line class="st27" x1="2509.3" y1="0" x2="2509.3" y2="272.6"/>
+	<line class="st27" x1="2502.2" y1="0" x2="2502.2" y2="272.6"/>
+	<line class="st27" x1="2495.2" y1="0" x2="2495.2" y2="272.6"/>
+	<line class="st27" x1="2488.1" y1="0" x2="2488.1" y2="272.6"/>
+	<line class="st27" x1="2481" y1="0" x2="2481" y2="272.6"/>
+	<line class="st27" x1="2474" y1="0" x2="2474" y2="272.6"/>
+	<line class="st27" x1="2466.9" y1="0" x2="2466.9" y2="272.6"/>
+	<line class="st27" x1="2459.8" y1="0" x2="2459.8" y2="272.6"/>
+	<line class="st27" x1="2452.8" y1="0" x2="2452.8" y2="272.6"/>
+	<line class="st27" x1="2445.7" y1="0" x2="2445.7" y2="272.6"/>
+	<line class="st27" x1="2438.6" y1="0" x2="2438.6" y2="272.6"/>
+	<line class="st27" x1="2431.6" y1="0" x2="2431.6" y2="272.6"/>
+	<line class="st27" x1="2424.5" y1="0" x2="2424.5" y2="272.6"/>
+	<line class="st27" x1="2417.4" y1="0" x2="2417.4" y2="272.6"/>
+	<line class="st27" x1="2410.4" y1="0" x2="2410.4" y2="272.6"/>
+	<line class="st27" x1="2403.3" y1="0" x2="2403.3" y2="272.6"/>
+	<line class="st27" x1="2396.2" y1="0" x2="2396.2" y2="272.6"/>
+	<line class="st27" x1="2389.2" y1="0" x2="2389.2" y2="272.6"/>
+	<line class="st27" x1="2382.1" y1="0" x2="2382.1" y2="272.6"/>
+	<line class="st27" x1="2375" y1="0" x2="2375" y2="272.6"/>
+	<line class="st27" x1="2367.9" y1="0" x2="2367.9" y2="272.6"/>
+	<line class="st27" x1="2360.9" y1="0" x2="2360.9" y2="272.6"/>
+	<line class="st27" x1="2353.8" y1="0" x2="2353.8" y2="272.6"/>
+	<line class="st27" x1="2346.7" y1="0" x2="2346.7" y2="272.6"/>
+	<line class="st27" x1="2339.7" y1="0" x2="2339.7" y2="272.6"/>
+	<line class="st27" x1="2332.6" y1="0" x2="2332.6" y2="272.6"/>
+	<line class="st27" x1="2325.5" y1="0" x2="2325.5" y2="272.6"/>
+	<line class="st27" x1="2318.5" y1="0" x2="2318.5" y2="272.6"/>
+	<line class="st27" x1="2311.4" y1="0" x2="2311.4" y2="272.6"/>
+	<line class="st27" x1="2304.3" y1="0" x2="2304.3" y2="272.6"/>
+	<line class="st27" x1="2297.3" y1="0" x2="2297.3" y2="272.6"/>
+	<line class="st27" x1="2290.2" y1="0" x2="2290.2" y2="272.6"/>
+	<line class="st27" x1="2283.1" y1="0" x2="2283.1" y2="272.6"/>
+	<line class="st27" x1="2276.1" y1="0" x2="2276.1" y2="272.6"/>
+	<line class="st27" x1="2269" y1="0" x2="2269" y2="272.6"/>
+	<line class="st27" x1="2261.9" y1="0" x2="2261.9" y2="272.6"/>
+	<line class="st27" x1="2254.8" y1="0" x2="2254.8" y2="272.6"/>
+	<line class="st27" x1="2247.8" y1="0" x2="2247.8" y2="272.6"/>
+	<line class="st27" x1="2240.7" y1="0" x2="2240.7" y2="272.6"/>
+	<line class="st27" x1="2233.6" y1="0" x2="2233.6" y2="272.6"/>
+	<line class="st27" x1="2226.6" y1="0" x2="2226.6" y2="272.6"/>
+	<line class="st27" x1="2219.5" y1="0" x2="2219.5" y2="272.6"/>
+	<line class="st27" x1="2212.4" y1="0" x2="2212.4" y2="272.6"/>
+	<line class="st27" x1="2205.4" y1="0" x2="2205.4" y2="272.6"/>
+	<line class="st27" x1="2198.3" y1="0" x2="2198.3" y2="272.6"/>
+	<line class="st27" x1="2191.2" y1="0" x2="2191.2" y2="272.6"/>
+	<line class="st27" x1="2184.2" y1="0" x2="2184.2" y2="272.6"/>
+	<line class="st27" x1="2177.1" y1="0" x2="2177.1" y2="272.6"/>
+	<line class="st27" x1="2170" y1="0" x2="2170" y2="272.6"/>
+	<line class="st27" x1="2163" y1="0" x2="2163" y2="272.6"/>
+	<line class="st27" x1="2155.9" y1="0" x2="2155.9" y2="272.6"/>
+	<line class="st27" x1="2148.8" y1="0" x2="2148.8" y2="272.6"/>
+	<line class="st27" x1="2141.8" y1="0" x2="2141.8" y2="272.6"/>
+	<line class="st27" x1="2134.7" y1="0" x2="2134.7" y2="272.6"/>
+	<line class="st27" x1="2127.6" y1="0" x2="2127.6" y2="272.6"/>
+	<line class="st27" x1="2120.5" y1="0" x2="2120.5" y2="272.6"/>
+	<line class="st27" x1="2113.5" y1="0" x2="2113.5" y2="272.6"/>
+	<line class="st27" x1="2106.4" y1="0" x2="2106.4" y2="272.6"/>
+	<line class="st27" x1="2099.3" y1="0" x2="2099.3" y2="272.6"/>
+	<line class="st27" x1="2092.3" y1="0" x2="2092.3" y2="272.6"/>
+	<line class="st27" x1="2085.2" y1="0" x2="2085.2" y2="272.6"/>
+	<line class="st27" x1="2078.1" y1="0" x2="2078.1" y2="272.6"/>
+	<line class="st27" x1="2071.1" y1="0" x2="2071.1" y2="272.6"/>
+	<line class="st27" x1="2064" y1="0" x2="2064" y2="272.6"/>
+	<line class="st27" x1="2056.9" y1="0" x2="2056.9" y2="272.6"/>
+	<line class="st27" x1="2049.9" y1="0" x2="2049.9" y2="272.6"/>
+	<line class="st27" x1="2042.8" y1="0" x2="2042.8" y2="272.6"/>
+	<line class="st27" x1="2035.7" y1="0" x2="2035.7" y2="272.6"/>
+	<line class="st27" x1="2028.7" y1="0" x2="2028.7" y2="272.6"/>
+	<line class="st27" x1="2021.6" y1="0" x2="2021.6" y2="272.6"/>
+	<line class="st27" x1="2014.5" y1="0" x2="2014.5" y2="272.6"/>
+	<line class="st27" x1="2007.5" y1="0" x2="2007.5" y2="272.6"/>
+	<line class="st27" x1="2000.4" y1="0" x2="2000.4" y2="272.6"/>
+	<line class="st27" x1="1993.3" y1="0" x2="1993.3" y2="272.6"/>
+	<line class="st27" x1="1986.2" y1="0" x2="1986.2" y2="272.6"/>
+	<line class="st27" x1="1979.2" y1="0" x2="1979.2" y2="272.6"/>
+	<line class="st27" x1="1972.1" y1="0" x2="1972.1" y2="272.6"/>
+	<line class="st27" x1="1965" y1="0" x2="1965" y2="272.6"/>
+	<line class="st27" x1="1958" y1="0" x2="1958" y2="272.6"/>
+	<line class="st27" x1="1950.9" y1="0" x2="1950.9" y2="272.6"/>
+	<line class="st27" x1="1943.8" y1="0" x2="1943.8" y2="272.6"/>
+	<line class="st27" x1="1936.8" y1="0" x2="1936.8" y2="272.6"/>
+	<line class="st27" x1="1929.7" y1="0" x2="1929.7" y2="272.6"/>
+	<line class="st27" x1="1922.6" y1="0" x2="1922.6" y2="272.6"/>
+	<line class="st27" x1="1915.6" y1="0" x2="1915.6" y2="272.6"/>
+	<line class="st27" x1="1908.5" y1="0" x2="1908.5" y2="272.6"/>
+	<line class="st27" x1="1901.4" y1="0" x2="1901.4" y2="272.6"/>
+	<line class="st27" x1="1894.4" y1="0" x2="1894.4" y2="272.6"/>
+	<line class="st27" x1="1887.3" y1="0" x2="1887.3" y2="272.6"/>
+	<line class="st27" x1="1880.2" y1="0" x2="1880.2" y2="272.6"/>
+	<line class="st27" x1="1873.2" y1="0" x2="1873.2" y2="272.6"/>
+	<line class="st27" x1="1866.1" y1="0" x2="1866.1" y2="272.6"/>
+	<line class="st27" x1="1859" y1="0" x2="1859" y2="272.6"/>
+	<line class="st27" x1="1851.9" y1="0" x2="1851.9" y2="272.6"/>
+	<line class="st27" x1="1844.9" y1="0" x2="1844.9" y2="272.6"/>
+	<line class="st27" x1="1837.8" y1="0" x2="1837.8" y2="272.6"/>
+	<line class="st27" x1="1830.7" y1="0" x2="1830.7" y2="272.6"/>
+	<line class="st27" x1="1823.7" y1="0" x2="1823.7" y2="272.6"/>
+	<line class="st27" x1="1816.6" y1="0" x2="1816.6" y2="272.6"/>
+	<line class="st27" x1="1809.5" y1="0" x2="1809.5" y2="272.6"/>
+	<line class="st27" x1="1802.5" y1="0" x2="1802.5" y2="272.6"/>
+	<line class="st27" x1="1795.4" y1="0" x2="1795.4" y2="272.6"/>
+	<line class="st27" x1="1788.3" y1="0" x2="1788.3" y2="272.6"/>
+	<line class="st27" x1="1781.3" y1="0" x2="1781.3" y2="272.6"/>
+	<line class="st27" x1="1774.2" y1="0" x2="1774.2" y2="272.6"/>
+	<line class="st27" x1="1767.1" y1="0" x2="1767.1" y2="272.6"/>
+	<line class="st27" x1="1760.1" y1="0" x2="1760.1" y2="272.6"/>
+	<line class="st27" x1="1753" y1="0" x2="1753" y2="272.6"/>
+	<line class="st27" x1="1745.9" y1="0" x2="1745.9" y2="272.6"/>
+	<line class="st27" x1="1738.8" y1="0" x2="1738.8" y2="272.6"/>
+	<line class="st27" x1="1731.8" y1="0" x2="1731.8" y2="272.6"/>
+	<line class="st27" x1="1724.7" y1="0" x2="1724.7" y2="272.6"/>
+	<line class="st27" x1="1717.6" y1="0" x2="1717.6" y2="272.6"/>
+	<line class="st27" x1="1710.6" y1="0" x2="1710.6" y2="272.6"/>
+	<line class="st27" x1="1703.5" y1="0" x2="1703.5" y2="272.6"/>
+	<line class="st27" x1="1696.4" y1="0" x2="1696.4" y2="272.6"/>
+	<line class="st27" x1="1689.4" y1="0" x2="1689.4" y2="272.6"/>
+	<line class="st27" x1="1682.3" y1="0" x2="1682.3" y2="272.6"/>
+	<line class="st27" x1="1675.2" y1="0" x2="1675.2" y2="272.6"/>
+	<line class="st27" x1="1668.2" y1="0" x2="1668.2" y2="272.6"/>
+	<line class="st27" x1="1661.1" y1="0" x2="1661.1" y2="272.6"/>
+	<line class="st27" x1="1654" y1="0" x2="1654" y2="272.6"/>
+	<line class="st27" x1="1647" y1="0" x2="1647" y2="272.6"/>
+	<line class="st27" x1="1639.9" y1="0" x2="1639.9" y2="272.6"/>
+	<line class="st27" x1="1632.8" y1="0" x2="1632.8" y2="272.6"/>
+	<line class="st27" x1="1625.8" y1="0" x2="1625.8" y2="272.6"/>
+	<line class="st27" x1="1618.7" y1="0" x2="1618.7" y2="272.6"/>
+	<line class="st27" x1="1611.6" y1="0" x2="1611.6" y2="272.6"/>
+	<line class="st27" x1="1604.5" y1="0" x2="1604.5" y2="272.6"/>
+	<line class="st27" x1="1597.5" y1="0" x2="1597.5" y2="272.6"/>
+	<line class="st27" x1="1590.4" y1="0" x2="1590.4" y2="272.6"/>
+	<line class="st27" x1="1583.3" y1="0" x2="1583.3" y2="272.6"/>
+	<line class="st27" x1="1576.3" y1="0" x2="1576.3" y2="272.6"/>
+	<line class="st27" x1="1569.2" y1="0" x2="1569.2" y2="272.6"/>
+	<line class="st27" x1="1562.1" y1="0" x2="1562.1" y2="272.6"/>
+	<line class="st27" x1="1555.1" y1="0" x2="1555.1" y2="272.6"/>
+	<line class="st27" x1="1548" y1="0" x2="1548" y2="272.6"/>
+	<line class="st27" x1="1540.9" y1="0" x2="1540.9" y2="272.6"/>
+	<line class="st27" x1="1533.9" y1="0" x2="1533.9" y2="272.6"/>
+	<line class="st27" x1="1526.8" y1="0" x2="1526.8" y2="272.6"/>
+	<line class="st27" x1="1519.7" y1="0" x2="1519.7" y2="272.6"/>
+	<line class="st27" x1="1512.7" y1="0" x2="1512.7" y2="272.6"/>
+	<line class="st27" x1="1505.6" y1="0" x2="1505.6" y2="272.6"/>
+	<line class="st27" x1="1498.5" y1="0" x2="1498.5" y2="272.6"/>
+	<line class="st27" x1="1491.5" y1="0" x2="1491.5" y2="272.6"/>
+	<line class="st27" x1="1484.4" y1="0" x2="1484.4" y2="272.6"/>
+	<line class="st27" x1="1477.3" y1="0" x2="1477.3" y2="272.6"/>
+	<line class="st27" x1="1470.2" y1="0" x2="1470.2" y2="272.6"/>
+	<line class="st27" x1="1463.2" y1="0" x2="1463.2" y2="272.6"/>
+	<line class="st27" x1="1456.1" y1="0" x2="1456.1" y2="272.6"/>
+	<line class="st27" x1="1449" y1="0" x2="1449" y2="272.6"/>
+	<line class="st27" x1="1442" y1="0" x2="1442" y2="272.6"/>
+	<line class="st27" x1="1434.9" y1="0" x2="1434.9" y2="272.6"/>
+	<line class="st27" x1="1427.8" y1="0" x2="1427.8" y2="272.6"/>
+	<line class="st27" x1="1420.8" y1="0" x2="1420.8" y2="272.6"/>
+	<line class="st27" x1="1413.7" y1="0" x2="1413.7" y2="272.6"/>
+	<line class="st27" x1="1406.6" y1="0" x2="1406.6" y2="272.6"/>
+	<line class="st27" x1="1399.6" y1="0" x2="1399.6" y2="272.6"/>
+	<line class="st27" x1="1392.5" y1="0" x2="1392.5" y2="272.6"/>
+	<line class="st27" x1="1385.4" y1="0" x2="1385.4" y2="272.6"/>
+	<line class="st27" x1="1378.4" y1="0" x2="1378.4" y2="272.6"/>
+	<line class="st27" x1="1371.3" y1="0" x2="1371.3" y2="272.6"/>
+	<line class="st27" x1="1364.2" y1="0" x2="1364.2" y2="272.6"/>
+	<line class="st27" x1="1357.2" y1="0" x2="1357.2" y2="272.6"/>
+	<line class="st27" x1="1350.1" y1="0" x2="1350.1" y2="272.6"/>
+	<line class="st27" x1="1343" y1="0" x2="1343" y2="272.6"/>
+	<line class="st27" x1="1335.9" y1="0" x2="1335.9" y2="272.6"/>
+	<line class="st27" x1="1328.9" y1="0" x2="1328.9" y2="272.6"/>
+	<line class="st27" x1="1321.8" y1="0" x2="1321.8" y2="272.6"/>
+	<line class="st27" x1="1314.7" y1="0" x2="1314.7" y2="272.6"/>
+	<line class="st27" x1="1307.7" y1="0" x2="1307.7" y2="272.6"/>
+	<line class="st27" x1="1300.6" y1="0" x2="1300.6" y2="272.6"/>
+	<line class="st27" x1="1293.5" y1="0" x2="1293.5" y2="272.6"/>
+	<line class="st27" x1="1286.5" y1="0" x2="1286.5" y2="272.6"/>
+	<line class="st27" x1="1279.4" y1="0" x2="1279.4" y2="272.6"/>
+	<line class="st27" x1="1272.3" y1="0" x2="1272.3" y2="272.6"/>
+	<line class="st27" x1="1265.3" y1="0" x2="1265.3" y2="272.6"/>
+	<line class="st27" x1="1258.2" y1="0" x2="1258.2" y2="272.6"/>
+	<line class="st27" x1="1251.1" y1="0" x2="1251.1" y2="272.6"/>
+	<line class="st27" x1="1244.1" y1="0" x2="1244.1" y2="272.6"/>
+	<line class="st27" x1="1237" y1="0" x2="1237" y2="272.6"/>
+	<line class="st27" x1="1229.9" y1="0" x2="1229.9" y2="272.6"/>
+	<line class="st27" x1="1222.8" y1="0" x2="1222.8" y2="272.6"/>
+	<line class="st27" x1="1215.8" y1="0" x2="1215.8" y2="272.6"/>
+	<line class="st27" x1="1208.7" y1="0" x2="1208.7" y2="272.6"/>
+	<line class="st27" x1="1201.6" y1="0" x2="1201.6" y2="272.6"/>
+	<line class="st27" x1="1194.6" y1="0" x2="1194.6" y2="272.6"/>
+	<line class="st27" x1="1187.5" y1="0" x2="1187.5" y2="272.6"/>
+	<line class="st27" x1="1180.4" y1="0" x2="1180.4" y2="272.6"/>
+	<line class="st27" x1="1173.4" y1="0" x2="1173.4" y2="272.6"/>
+	<line class="st27" x1="1166.3" y1="0" x2="1166.3" y2="272.6"/>
+	<line class="st27" x1="1159.2" y1="0" x2="1159.2" y2="272.6"/>
+	<line class="st27" x1="1152.2" y1="0" x2="1152.2" y2="272.6"/>
+	<line class="st27" x1="1145.1" y1="0" x2="1145.1" y2="272.6"/>
+	<line class="st27" x1="1138" y1="0" x2="1138" y2="272.6"/>
+	<line class="st27" x1="1131" y1="0" x2="1131" y2="272.6"/>
+	<line class="st27" x1="1123.9" y1="0" x2="1123.9" y2="272.6"/>
+	<line class="st27" x1="1116.8" y1="0" x2="1116.8" y2="272.6"/>
+	<line class="st27" x1="1109.8" y1="0" x2="1109.8" y2="272.6"/>
+	<line class="st27" x1="1102.7" y1="0" x2="1102.7" y2="272.6"/>
+	<line class="st27" x1="1095.6" y1="0" x2="1095.6" y2="272.6"/>
+	<line class="st27" x1="1088.5" y1="0" x2="1088.5" y2="272.6"/>
+	<line class="st27" x1="1081.5" y1="0" x2="1081.5" y2="272.6"/>
+	<line class="st27" x1="1074.4" y1="0" x2="1074.4" y2="272.6"/>
+	<line class="st27" x1="1067.3" y1="0" x2="1067.3" y2="272.6"/>
+	<line class="st27" x1="1060.3" y1="0" x2="1060.3" y2="272.6"/>
+	<line class="st27" x1="1053.2" y1="0" x2="1053.2" y2="272.6"/>
+	<line class="st27" x1="1046.1" y1="0" x2="1046.1" y2="272.6"/>
+	<line class="st27" x1="1039.1" y1="0" x2="1039.1" y2="272.6"/>
+	<line class="st27" x1="1032" y1="0" x2="1032" y2="272.6"/>
+	<line class="st27" x1="1024.9" y1="0" x2="1024.9" y2="272.6"/>
+	<line class="st27" x1="1017.9" y1="0" x2="1017.9" y2="272.6"/>
+	<line class="st27" x1="1010.8" y1="0" x2="1010.8" y2="272.6"/>
+	<line class="st27" x1="1003.7" y1="0" x2="1003.7" y2="272.6"/>
+	<line class="st27" x1="996.7" y1="0" x2="996.7" y2="272.6"/>
+	<line class="st27" x1="989.6" y1="0" x2="989.6" y2="272.6"/>
+	<line class="st27" x1="982.5" y1="0" x2="982.5" y2="272.6"/>
+	<line class="st27" x1="975.5" y1="0" x2="975.5" y2="272.6"/>
+	<line class="st27" x1="968.4" y1="0" x2="968.4" y2="272.6"/>
+	<line class="st27" x1="961.3" y1="0" x2="961.3" y2="272.6"/>
+	<line class="st27" x1="954.2" y1="0" x2="954.2" y2="272.6"/>
+	<line class="st27" x1="947.2" y1="0" x2="947.2" y2="272.6"/>
+	<line class="st27" x1="940.1" y1="0" x2="940.1" y2="272.6"/>
+	<line class="st27" x1="933" y1="0" x2="933" y2="272.6"/>
+	<line class="st27" x1="926" y1="0" x2="926" y2="272.6"/>
+	<line class="st27" x1="918.9" y1="0" x2="918.9" y2="272.6"/>
+	<line class="st27" x1="911.8" y1="0" x2="911.8" y2="272.6"/>
+	<line class="st27" x1="904.8" y1="0" x2="904.8" y2="272.6"/>
+	<line class="st27" x1="897.7" y1="0" x2="897.7" y2="272.6"/>
+	<line class="st27" x1="890.6" y1="0" x2="890.6" y2="272.6"/>
+	<line class="st27" x1="883.6" y1="0" x2="883.6" y2="272.6"/>
+	<line class="st27" x1="876.5" y1="0" x2="876.5" y2="272.6"/>
+	<line class="st27" x1="869.4" y1="0" x2="869.4" y2="272.6"/>
+	<line class="st27" x1="862.4" y1="0" x2="862.4" y2="272.6"/>
+	<line class="st27" x1="855.3" y1="0" x2="855.3" y2="272.6"/>
+	<line class="st27" x1="848.2" y1="0" x2="848.2" y2="272.6"/>
+	<line class="st27" x1="841.2" y1="0" x2="841.2" y2="272.6"/>
+	<line class="st27" x1="834.1" y1="0" x2="834.1" y2="272.6"/>
+	<line class="st27" x1="827" y1="0" x2="827" y2="272.6"/>
+	<line class="st27" x1="819.9" y1="0" x2="819.9" y2="272.6"/>
+	<line class="st27" x1="812.9" y1="0" x2="812.9" y2="272.6"/>
+	<line class="st27" x1="805.8" y1="0" x2="805.8" y2="272.6"/>
+	<line class="st27" x1="798.7" y1="0" x2="798.7" y2="272.6"/>
+	<line class="st27" x1="791.7" y1="0" x2="791.7" y2="272.6"/>
+	<line class="st27" x1="784.6" y1="0" x2="784.6" y2="272.6"/>
+	<line class="st27" x1="777.5" y1="0" x2="777.5" y2="272.6"/>
+	<line class="st27" x1="770.5" y1="0" x2="770.5" y2="272.6"/>
+	<line class="st27" x1="763.4" y1="0" x2="763.4" y2="272.6"/>
+	<line class="st27" x1="756.3" y1="0" x2="756.3" y2="272.6"/>
+	<line class="st27" x1="749.3" y1="0" x2="749.3" y2="272.6"/>
+	<line class="st27" x1="742.2" y1="0" x2="742.2" y2="272.6"/>
+	<line class="st27" x1="735.1" y1="0" x2="735.1" y2="272.6"/>
+	<line class="st27" x1="728.1" y1="0" x2="728.1" y2="272.6"/>
+	<line class="st27" x1="721" y1="0" x2="721" y2="272.6"/>
+	<line class="st27" x1="713.9" y1="0" x2="713.9" y2="272.6"/>
+	<line class="st27" x1="706.8" y1="0" x2="706.8" y2="272.6"/>
+	<line class="st27" x1="699.8" y1="0" x2="699.8" y2="272.6"/>
+	<line class="st27" x1="692.7" y1="0" x2="692.7" y2="272.6"/>
+	<line class="st27" x1="685.6" y1="0" x2="685.6" y2="272.6"/>
+	<line class="st27" x1="678.6" y1="0" x2="678.6" y2="272.6"/>
+	<line class="st27" x1="671.5" y1="0" x2="671.5" y2="272.6"/>
+	<line class="st27" x1="664.4" y1="0" x2="664.4" y2="272.6"/>
+	<line class="st27" x1="657.4" y1="0" x2="657.4" y2="272.6"/>
+	<line class="st27" x1="650.3" y1="0" x2="650.3" y2="272.6"/>
+	<line class="st27" x1="643.2" y1="0" x2="643.2" y2="272.6"/>
+	<line class="st27" x1="636.2" y1="0" x2="636.2" y2="272.6"/>
+	<line class="st27" x1="629.1" y1="0" x2="629.1" y2="272.6"/>
+	<line class="st27" x1="622" y1="0" x2="622" y2="272.6"/>
+	<line class="st27" x1="615" y1="0" x2="615" y2="272.6"/>
+	<line class="st27" x1="607.9" y1="0" x2="607.9" y2="272.6"/>
+	<line class="st27" x1="600.8" y1="0" x2="600.8" y2="272.6"/>
+	<line class="st27" x1="593.8" y1="0" x2="593.8" y2="272.6"/>
+	<line class="st27" x1="586.7" y1="0" x2="586.7" y2="272.6"/>
+	<line class="st27" x1="579.6" y1="0" x2="579.6" y2="272.6"/>
+	<line class="st27" x1="572.5" y1="0" x2="572.5" y2="272.6"/>
+	<line class="st27" x1="565.5" y1="0" x2="565.5" y2="272.6"/>
+	<line class="st27" x1="558.4" y1="0" x2="558.4" y2="272.6"/>
+	<line class="st27" x1="551.3" y1="0" x2="551.3" y2="272.6"/>
+	<line class="st27" x1="544.3" y1="0" x2="544.3" y2="272.6"/>
+	<line class="st27" x1="537.2" y1="0" x2="537.2" y2="272.6"/>
+	<line class="st27" x1="530.1" y1="0" x2="530.1" y2="272.6"/>
+	<line class="st27" x1="523.1" y1="0" x2="523.1" y2="272.6"/>
+	<line class="st27" x1="516" y1="0" x2="516" y2="272.6"/>
+	<line class="st27" x1="508.9" y1="0" x2="508.9" y2="272.6"/>
+	<line class="st27" x1="501.9" y1="0" x2="501.9" y2="272.6"/>
+	<line class="st27" x1="494.8" y1="0" x2="494.8" y2="272.6"/>
+	<line class="st27" x1="487.7" y1="0" x2="487.7" y2="272.6"/>
+	<line class="st27" x1="480.7" y1="0" x2="480.7" y2="272.6"/>
+	<line class="st27" x1="473.6" y1="0" x2="473.6" y2="272.6"/>
+	<line class="st27" x1="466.5" y1="0" x2="466.5" y2="272.6"/>
+	<line class="st27" x1="459.5" y1="0" x2="459.5" y2="272.6"/>
+	<line class="st27" x1="452.4" y1="0" x2="452.4" y2="272.6"/>
+	<line class="st27" x1="445.3" y1="0" x2="445.3" y2="272.6"/>
+	<line class="st27" x1="438.2" y1="0" x2="438.2" y2="272.6"/>
+	<line class="st27" x1="431.2" y1="0" x2="431.2" y2="272.6"/>
+	<line class="st27" x1="424.1" y1="0" x2="424.1" y2="272.6"/>
+	<line class="st27" x1="417" y1="0" x2="417" y2="272.6"/>
+	<line class="st27" x1="410" y1="0" x2="410" y2="272.6"/>
+	<line class="st27" x1="402.9" y1="0" x2="402.9" y2="272.6"/>
+	<line class="st27" x1="395.8" y1="0" x2="395.8" y2="272.6"/>
+	<line class="st27" x1="388.8" y1="0" x2="388.8" y2="272.6"/>
+	<line class="st27" x1="381.7" y1="0" x2="381.7" y2="272.6"/>
+	<line class="st27" x1="374.6" y1="0" x2="374.6" y2="272.6"/>
+	<line class="st27" x1="367.6" y1="0" x2="367.6" y2="272.6"/>
+	<line class="st27" x1="360.5" y1="0" x2="360.5" y2="272.6"/>
+	<line class="st27" x1="353.4" y1="0" x2="353.4" y2="272.6"/>
+	<line class="st27" x1="346.4" y1="0" x2="346.4" y2="272.6"/>
+	<line class="st27" x1="339.3" y1="0" x2="339.3" y2="272.6"/>
+	<line class="st27" x1="332.2" y1="0" x2="332.2" y2="272.6"/>
+	<line class="st27" x1="325.2" y1="0" x2="325.2" y2="272.6"/>
+	<line class="st27" x1="318.1" y1="0" x2="318.1" y2="272.6"/>
+	<line class="st27" x1="311" y1="0" x2="311" y2="272.6"/>
+	<line class="st27" x1="303.9" y1="0" x2="303.9" y2="272.6"/>
+	<line class="st27" x1="296.9" y1="0" x2="296.9" y2="272.6"/>
+	<line class="st27" x1="289.8" y1="0" x2="289.8" y2="272.6"/>
+	<line class="st27" x1="282.7" y1="0" x2="282.7" y2="272.6"/>
+	<line class="st27" x1="275.7" y1="0" x2="275.7" y2="272.6"/>
+	<line class="st27" x1="268.6" y1="0" x2="268.6" y2="272.6"/>
+	<line class="st27" x1="261.5" y1="0" x2="261.5" y2="272.6"/>
+	<line class="st27" x1="254.5" y1="0" x2="254.5" y2="272.6"/>
+	<line class="st27" x1="247.4" y1="0" x2="247.4" y2="272.6"/>
+	<line class="st27" x1="240.3" y1="0" x2="240.3" y2="272.6"/>
+	<line class="st27" x1="233.3" y1="0" x2="233.3" y2="272.6"/>
+	<line class="st27" x1="226.2" y1="0" x2="226.2" y2="272.6"/>
+	<line class="st27" x1="219.1" y1="0" x2="219.1" y2="272.6"/>
+	<line class="st27" x1="212.1" y1="0" x2="212.1" y2="272.6"/>
+	<line class="st27" x1="205" y1="0" x2="205" y2="272.6"/>
+	<line class="st27" x1="197.9" y1="0" x2="197.9" y2="272.6"/>
+	<line class="st27" x1="190.8" y1="0" x2="190.8" y2="272.6"/>
+	<line class="st27" x1="183.8" y1="0" x2="183.8" y2="272.6"/>
+	<line class="st27" x1="176.7" y1="0" x2="176.7" y2="272.6"/>
+	<line class="st27" x1="169.6" y1="0" x2="169.6" y2="272.6"/>
+	<line class="st27" x1="162.6" y1="0" x2="162.6" y2="272.6"/>
+	<line class="st27" x1="155.5" y1="0" x2="155.5" y2="272.6"/>
+	<line class="st27" x1="148.4" y1="0" x2="148.4" y2="272.6"/>
+	<line class="st27" x1="141.4" y1="0" x2="141.4" y2="272.6"/>
+	<line class="st27" x1="134.3" y1="0" x2="134.3" y2="272.6"/>
+	<line class="st27" x1="127.2" y1="0" x2="127.2" y2="272.6"/>
+	<line class="st27" x1="120.2" y1="0" x2="120.2" y2="272.6"/>
+	<line class="st27" x1="113.1" y1="0" x2="113.1" y2="272.6"/>
+	<line class="st27" x1="106" y1="0" x2="106" y2="272.6"/>
+	<line class="st27" x1="99" y1="0" x2="99" y2="272.6"/>
+	<line class="st27" x1="91.9" y1="0" x2="91.9" y2="272.6"/>
+	<line class="st27" x1="84.8" y1="0" x2="84.8" y2="272.6"/>
+	<line class="st27" x1="77.8" y1="0" x2="77.8" y2="272.6"/>
+	<line class="st27" x1="70.7" y1="0" x2="70.7" y2="272.6"/>
+	<line class="st27" x1="63.6" y1="0" x2="63.6" y2="272.6"/>
+	<line class="st27" x1="56.5" y1="0" x2="56.5" y2="272.6"/>
+	<line class="st27" x1="49.5" y1="0" x2="49.5" y2="272.6"/>
+	<line class="st27" x1="42.4" y1="0" x2="42.4" y2="272.6"/>
+	<line class="st27" x1="35.3" y1="0" x2="35.3" y2="272.6"/>
+	<line class="st27" x1="28.3" y1="0" x2="28.3" y2="272.6"/>
+	<line class="st27" x1="21.2" y1="0" x2="21.2" y2="272.6"/>
+	<line class="st27" x1="14.1" y1="0" x2="14.1" y2="272.6"/>
+	<line class="st27" x1="7.1" y1="0" x2="7.1" y2="272.6"/>
+	<line class="st27" x1="0" y1="0" x2="0" y2="272.6"/>
+</g>
+</svg>
+</body>
+</html>
